@@ -57,6 +57,9 @@ namespace WDPA
                 points += 1;
                 points_lbl.Text = points.ToString();
 
+                Random r = new Random();
+                playground.BackColor = Color.FromArgb(r.Next(150, 255), r.Next(150, 255), r.Next(150, 255));     //Get a random RGB Color set is as playground backcolor 
+
             }
             if (ball.Left <= playground.Left)
             {
@@ -81,8 +84,26 @@ namespace WDPA
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape) { this.Close(); }                                                //Press Escape to Quit
-        }
+            if (e.KeyCode == Keys.Escape) { this.Close(); }                                      //Press Escape to Quit
+            if(e.KeyCode == Keys.F1)                                                             //Relove Game
+            {
+                ball.Top = 50;
+                ball.Left = 50;
+                speed_left = 4;
+                speed_top = 4;
+                points = 0;
+                points_lbl.Text = "0";
+                timer1.Enabled = true;
+                gameover_lbl.Visible = false;
+
+                playground.BackColor = Color.White;
+
+
+            }
+                    
+                    
+                    
+                    }
 
           }
 }

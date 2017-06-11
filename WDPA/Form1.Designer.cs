@@ -97,7 +97,7 @@
             // 
             // racket
             // 
-            this.racket.BackColor = System.Drawing.Color.GreenYellow;
+            this.racket.BackColor = System.Drawing.Color.Black;
             this.racket.Location = new System.Drawing.Point(234, 410);
             this.racket.Name = "racket";
             this.racket.Size = new System.Drawing.Size(150, 15);
