@@ -34,6 +34,11 @@ namespace WDPA
 
             racket.Top = playground.Bottom - (playground.Bottom / 10);                                    //Set the position of racket
 
+            gameover_lbl.Left = (playground.Width / 2) - (gameover_lbl.Width / 2);                      //Position to center
+            gameover_lbl.Top = (playground.Height / 2) - (gameover_lbl.Height / 2);
+            gameover_lbl.Visible = false;                                                                //Hide
+
+
 
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -69,6 +74,7 @@ namespace WDPA
             if (ball.Bottom >= playground.Bottom)
             {
                 timer1.Enabled = false;                                                       //ball is Out-> Stop the game
+                gameover_lbl.Visible = true;
             }
 
         }
@@ -78,9 +84,5 @@ namespace WDPA
             if (e.KeyCode == Keys.Escape) { this.Close(); }                                                //Press Escape to Quit
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-    }
+          }
 }
